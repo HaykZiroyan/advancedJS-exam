@@ -1,6 +1,6 @@
 function groupBy(cb) {
     newArr = []
-    this.usersData.map(elem => {
+    this.map(elem => {
         if(cb(elem)) {
             newArr.push(elem)
         }
@@ -24,9 +24,16 @@ class Services {
             this.usersData = data;
         })
     }
+    async groupFunc() {
+        setTimeout(() => {
+            const arr = this.usersData.groupBy(elem => elem.id > 20)
+            console.log(arr)
+        }, 2000);
+    }
 
 }
   
 const check = new Services()
 
 check.fetchData("https://jsonplaceholder.typicode.com/posts")
+check.groupFunc()

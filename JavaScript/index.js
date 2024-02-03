@@ -1,3 +1,14 @@
+function groupBy(cb) {
+    newArr = []
+    this.usersData.map(elem => {
+        if(cb(elem)) {
+            newArr.push(elem)
+        }
+    })
+    return newArr
+}
+
+Array.prototype.groupBy = groupBy
 class Services {
     constructor() {
         this.usersData = []

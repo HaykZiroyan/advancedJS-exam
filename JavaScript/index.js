@@ -25,10 +25,14 @@ class Services {
         })
     }
     async groupFunc() {
+        this.sortedArr = []
         setTimeout(() => {
-            const arr = this.usersData.groupBy(elem => elem.id > 20)
-            console.log(arr)
+            this.sortedArr = this.usersData.groupBy(elem => elem.id > 20)
         }, 2000);
+        
+    }
+    getSortedArr() {
+        return this.sortedArr
     }
 
 }
@@ -37,3 +41,4 @@ const check = new Services()
 
 check.fetchData("https://jsonplaceholder.typicode.com/posts")
 check.groupFunc()
+console.log(getSortedArr())

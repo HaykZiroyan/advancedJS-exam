@@ -1,5 +1,6 @@
 import React from 'react'
-import {Formik, Form, Field} from 'formik'
+import {Formik, Form, Field, ErrorMessage} from 'formik'
+import styles from "./formik.module.css"
 import * as Yup from "yup";
 
 const checkSchema = Yup.object().shape({
@@ -20,8 +21,7 @@ const Forms = () => {
         <Formik
           initialValues={{ text: '', comment: '', selected: '' }}
           onSubmit={values => console.log(values)}
-          validationSchema={checkSchema}
-    >
+          validationSchema={checkSchema}>
         <Form>
           <Field validate={""} name="text" type="text" />
           <br />
@@ -38,8 +38,9 @@ const Forms = () => {
           </Field>
           <br />
 
-          <button type="submit">Submit</button>
+          <button type="submit" className={`${styles.btnSubmit}`}>Submit</button>
         </Form>
+        
       </Formik>
     </div>
   )

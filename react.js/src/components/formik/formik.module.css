@@ -1,0 +1,16 @@
+input {
+    margin: 10px;
+}
+.btnSubmit {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}

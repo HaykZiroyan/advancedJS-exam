@@ -1,8 +1,20 @@
-import React from 'react'
+import Forms from "../formik/formik";
 import styles from "./modal.module.css"
-const Modal = () => {
+import React, { useState } from "react";
+
+function Modal() {
+    const [position, setPosition] = useState(false)
+
   return (
-    <button className={`${styles.btn}`}> switch </button>
+    <div>
+        <button className={`${styles.btn}`} onClick = {() => {
+            setPosition(!position);
+            }} > 
+            switch 
+        </button>
+        {position ? <Forms /> : null}
+    </div>
+
   )
 }
 
